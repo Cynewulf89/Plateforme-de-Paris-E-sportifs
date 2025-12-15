@@ -1,0 +1,92 @@
+[
+  {
+    "id": "match1",
+    "team1": "Fnatic",
+    "team2": "G2 Esports",
+    "date": "2025-12-15T18:00:00Z",
+    "status": "upcoming",
+    "odds": {
+      "team1": 2.1,
+      "team2": 1.8
+    },
+    "tournament": "LEC Winter 2025"
+  },
+  {
+    "id": "match2",
+    "team1": "Team Liquid",
+    "team2": "Cloud9",
+    "date": "2025-12-16T20:00:00Z",
+    "status": "upcoming",
+    "odds": {
+      "team1": 1.9,
+      "team2": 2.0
+    },
+    "tournament": "Worlds 2025"
+  },
+  {
+    "id": "match3",
+    "team1": "Fnatic",
+    "team2": "Team Liquid",
+    "date": "2025-12-10T16:00:00Z",
+    "status": "finished",
+    "result": "team1",
+    "score": "2-1",
+    "odds": {
+      "team1": 2.2,
+      "team2": 1.7
+    },
+    "tournament": "LEC Winter 2025"
+  },
+  {
+    "id": "demo-finished",
+    "team1": "Paris Phoenix",
+    "team2": "Lyon Lions",
+    "date": "2025-12-11T19:00:00Z",
+    "status": "finished",
+    "result": "team1",
+    "score": "3-1",
+    "odds": {
+      "team1": 2.0,
+      "team2": 2.0
+    },
+    "tournament": "Demo Tournament"
+  },
+  {
+    "id": "demo1",
+    "team1": "Paris Phoenix",
+    "team2": "Lyon Lions",
+    "date": "2025-12-20T19:00:00Z",
+    "status": "upcoming",
+    "odds": {
+      "team1": 2.0,
+      "team2": 2.0
+    },
+    "tournament": "Demo Tournament"
+  },
+  {
+    "id": "demo2",
+    "team1": "Marseille Sharks",
+    "team2": "Toulouse Tigers",
+    "date": "2025-12-21T21:00:00Z",
+    "status": "upcoming",
+    "odds": {
+      "team1": 1.8,
+      "team2": 2.2
+    },
+    "tournament": "Demo Tournament"
+  },
+  {
+    "id": "demo3",
+    "team1": "Paris Phoenix",
+    "team2": "Marseille Sharks",
+    "date": "2025-12-12T18:00:00Z",
+    "status": "finished",
+    "result": "team2",
+    "score": "1-2",
+    "odds": {
+      "team1": 2.1,
+      "team2": 1.9
+    },
+    "tournament": "Demo Tournament"
+  }
+]

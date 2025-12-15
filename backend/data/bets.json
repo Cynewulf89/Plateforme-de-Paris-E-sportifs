@@ -1,0 +1,38 @@
+[
+  {
+    "id": "bet1",
+    "userId": 1765488314839,
+    "matchId": "match1",
+    "matchName": "Fnatic vs G2 Esports",
+    "amount": 50,
+    "prediction": "team1",
+    "odds": 2.1,
+    "potentialGain": 105,
+    "status": "pending",
+    "createdAt": "2025-12-11T21:30:00Z"
+  },
+  {
+    "id": "bet2",
+    "userId": 1765488356869,
+    "matchId": "match2",
+    "matchName": "Team Liquid vs Cloud9",
+    "amount": 25,
+    "prediction": "team2",
+    "odds": 2,
+    "potentialGain": 50,
+    "status": "pending",
+    "createdAt": "2025-12-11T21:35:00Z"
+  },
+  {
+    "id": 1765490109005,
+    "userId": 1765488356869,
+    "matchId": "match1",
+    "matchName": "Fnatic vs G2 Esports",
+    "amount": 15,
+    "prediction": "team1",
+    "odds": 2,
+    "potentialGain": "30.00",
+    "status": "pending",
+    "createdAt": "2025-12-11T21:55:09.005Z"
+  }
+]

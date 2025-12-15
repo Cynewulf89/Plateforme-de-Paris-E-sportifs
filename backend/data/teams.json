@@ -1,0 +1,26 @@
+[
+  {
+    "id": "team1",
+    "name": "Fnatic",
+    "logo": "https://example.com/fnatic-logo.png",
+    "description": "Équipe esports professionnelle"
+  },
+  {
+    "id": "team2",
+    "name": "G2 Esports",
+    "logo": "https://example.com/g2-logo.png",
+    "description": "Organisation esports majeure"
+  },
+  {
+    "id": "team3",
+    "name": "Team Liquid",
+    "logo": "https://example.com/liquid-logo.png",
+    "description": "Équipe légendaire"
+  },
+  {
+    "id": "team4",
+    "name": "Cloud9",
+    "logo": "https://example.com/cloud9-logo.png",
+    "description": "Organisation américaine"
+  }
+]
