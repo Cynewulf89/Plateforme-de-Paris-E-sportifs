@@ -24,7 +24,9 @@ git clone https://github.com/Cynewulf89/Plateforme-de-Paris-E-sportifs.git
 cd Plateforme-de-Paris-E-sportifs
 
 # Installer les dépendances frontend
+cd frontend
 npm install
+cd ..
 
 # Installer les dépendances backend
 cd backend
@@ -39,6 +41,7 @@ cd backend
 npm start
 
 # Terminal 2 : Frontend
+cd frontend
 npm run dev
 ```
 

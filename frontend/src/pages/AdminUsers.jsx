@@ -9,6 +9,13 @@ const AdminUsers = () => {
   const [error, setError] = useState('');
   const [depositInputs, setDepositInputs] = useState({});
 
+  const formatDate = (dateString) => {
+    if (!dateString) return 'Date inconnue';
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return 'Date invalide';
+    return date.toLocaleDateString('fr-FR');
+  };
+
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -111,7 +118,7 @@ const AdminUsers = () => {
                   {u.balance || 0} €
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {new Date(u.createdAt).toLocaleDateString('fr-FR')}
+                  {formatDate(u.createdAt)}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                   <div className="flex items-center space-x-2">

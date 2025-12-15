@@ -1,0 +1,56 @@
+[
+  {
+    "id": "demo1",
+    "team1": "Paris Phoenix",
+    "team2": "Lyon Lions",
+    "date": "2025-12-20T19:00:00Z",
+    "status": "upcoming",
+    "odds": {
+      "team1": 21.7,
+      "team2": 22.5
+    },
+    "tournament": "Demo Tournament"
+  },
+  {
+    "id": "demo2",
+    "team1": "Marseille Sharks",
+    "team2": "Toulouse Tigers",
+    "date": "2025-12-21T21:00:00Z",
+    "status": "upcoming",
+    "odds": {
+      "team1": 49.8,
+      "team2": 44.1
+    },
+    "tournament": "Demo Tournament"
+  },
+  {
+    "id": "demo-finished1",
+    "team1": "Paris Phoenix",
+    "team2": "Lyon Lions",
+    "date": "2025-12-11T19:00:00Z",
+    "status": "finished",
+    "tournament": "Demo Tournament",
+    "odds": {
+      "team1": 14.3,
+      "team2": 31.2
+    },
+    "result": "team1",
+    "score": "1-3",
+    "winner": "Paris Phoenix"
+  },
+  {
+    "id": "demo-finished2",
+    "team1": "Marseille Sharks",
+    "team2": "Toulouse Tigers",
+    "date": "2025-12-10T21:00:00Z",
+    "status": "finished",
+    "tournament": "Demo Tournament",
+    "odds": {
+      "team1": 57.7,
+      "team2": 52.1
+    },
+    "result": "team2",
+    "score": "0-2",
+    "winner": "Toulouse Tigers"
+  }
+]

@@ -66,7 +66,7 @@ app.use((req, res, next) => {
 // Handle preflight requests
 app.options('*', cors(corsOptions));
 
-// Test route
+// Test route (keep on main app)
 app.get('/', (req, res) => {
   res.json({ message: 'Server is running', timestamp: new Date().toISOString() });
 });
@@ -120,7 +120,7 @@ const requireAdmin = (req, res, next) => {
 };
 
 // Auth routes
-app.post('/auth/register', (req, res) => {
+app.post('/api/auth/register', (req, res) => {
   console.log('=== REGISTER REQUEST ===');
   console.log('Method:', req.method);
   console.log('URL:', req.url);
@@ -170,7 +170,7 @@ app.post('/auth/register', (req, res) => {
   }
 });
 
-app.post('/auth/login', (req, res) => {
+app.post('/api/auth/login', (req, res) => {
   console.log('=== LOGIN REQUEST ===');
   console.log('Method:', req.method);
   console.log('URL:', req.url);
@@ -208,7 +208,7 @@ app.post('/auth/login', (req, res) => {
 });
 
 // Routes for user management (admin only)
-app.get('/users', requireAdmin, (req, res) => {
+app.get('/api/users', requireAdmin, (req, res) => {
   try {
     const users = getUsers();
     // Return users without passwords
@@ -223,7 +223,7 @@ app.get('/users', requireAdmin, (req, res) => {
   }
 });
 
-app.put('/users/:id/role', requireAdmin, (req, res) => {
+app.put('/api/users/:id/role', requireAdmin, (req, res) => {
   try {
     const { id } = req.params;
     const { role } = req.body;
@@ -252,7 +252,7 @@ app.put('/users/:id/role', requireAdmin, (req, res) => {
 });
 
 // Update user balance
-app.put('/users/:id/balance', requireAuth, (req, res) => {
+app.put('/api/users/:id/balance', requireAuth, (req, res) => {
   try {
     const { id } = req.params;
     const { balance } = req.body;
@@ -284,7 +284,7 @@ app.put('/users/:id/balance', requireAuth, (req, res) => {
 });
 
 // Update user mode
-app.put('/users/:id/mode', requireAuth, (req, res) => {
+app.put('/api/users/:id/mode', requireAuth, (req, res) => {
   try {
     const { id } = req.params;
     const { mode } = req.body;
@@ -316,7 +316,7 @@ app.put('/users/:id/mode', requireAuth, (req, res) => {
 });
 
 // Routes for teams
-app.get('/teams', (req, res) => {
+app.get('/api/teams', (req, res) => {
   try {
     console.log('GET /api/teams called');
     let teams = [];
@@ -333,7 +333,7 @@ app.get('/teams', (req, res) => {
   }
 });
 
-app.post('/teams', requireAdmin, (req, res) => {
+app.post('/api/teams', requireAdmin, (req, res) => {
   try {
     console.log('POST /api/teams called - Admin operation');
     const { name, logo, description } = req.body;
@@ -366,7 +366,7 @@ app.post('/teams', requireAdmin, (req, res) => {
   }
 });
 
-app.delete('/teams/:id', requireAdmin, (req, res) => {
+app.delete('/api/teams/:id', requireAdmin, (req, res) => {
   try {
     console.log('DELETE /api/teams called - Admin operation');
     const teamId = req.params.id;
@@ -389,7 +389,7 @@ app.delete('/teams/:id', requireAdmin, (req, res) => {
 });
 
 // Routes for matches
-app.get('/matches', (req, res) => {
+app.get('/api/matches', (req, res) => {
   try {
     console.log('GET /api/matches called');
     let matches = [];
@@ -480,7 +480,7 @@ app.get('/matches', (req, res) => {
   }
 });
 
-app.post('/matches', requireAdmin, (req, res) => {
+app.post('/api/matches', requireAdmin, (req, res) => {
   try {
     console.log('POST /api/matches called - Admin operation');
     const { team1, team2, date, tournament } = req.body;
@@ -511,7 +511,7 @@ app.post('/matches', requireAdmin, (req, res) => {
   }
 });
 
-app.put('/matches/:id', requireAdmin, (req, res) => {
+app.put('/api/matches/:id', requireAdmin, (req, res) => {
   try {
     console.log('PUT /api/matches called - Admin operation');
     const matchId = req.params.id;
@@ -568,7 +568,7 @@ app.put('/matches/:id', requireAdmin, (req, res) => {
   }
 });
 
-app.delete('/matches/:id', requireAdmin, (req, res) => {
+app.delete('/api/matches/:id', requireAdmin, (req, res) => {
   try {
     console.log('DELETE /api/matches called - Admin operation');
     const matchId = req.params.id;
@@ -591,7 +591,7 @@ app.delete('/matches/:id', requireAdmin, (req, res) => {
 });
 
 // Routes for bets
-app.get('/bets', (req, res) => {
+app.get('/api/bets', (req, res) => {
   try {
     let bets = [];
     try {
@@ -606,7 +606,7 @@ app.get('/bets', (req, res) => {
   }
 });
 
-app.post('/bets', (req, res) => {
+app.post('/api/bets', (req, res) => {
   try {
     let bets = [];
     try {
@@ -631,7 +631,7 @@ app.post('/bets', (req, res) => {
 });
 
 // Resolve bets for finished matches
-app.post('/resolve-bets', requireAuth, (req, res) => {
+app.post('/api/resolve-bets', requireAuth, (req, res) => {
   try {
     let bets = [];
     try {
