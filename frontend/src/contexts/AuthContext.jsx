@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { apiRequest } from '../utils/api';
+import io from 'socket.io-client';
 
 const AuthContext = createContext();
 
@@ -14,6 +15,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [socket, setSocket] = useState(null);
 
   useEffect(() => {
     if (user) {
@@ -23,6 +25,24 @@ export const AuthProvider = ({ children }) => {
       localStorage.removeItem('user');
       setIsAuthenticated(false);
     }
+  }, [user]);
+
+  // Initialize Socket.io connection
+  useEffect(() => {
+    const socketConnection = io('http://localhost:5000');
+    setSocket(socketConnection);
+
+    // Listen for balance updates
+    socketConnection.on('balanceUpdated', (data) => {
+      if (user && user.id == data.userId) {
+        console.log('Balance updated via socket:', data);
+        setUser(prevUser => ({ ...prevUser, balance: data.balance }));
+      }
+    });
+
+    return () => {
+      socketConnection.disconnect();
+    };
   }, [user]);
 
   const login = async (email, password) => {
